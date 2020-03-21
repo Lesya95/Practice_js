@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>js</title>
+</head>
+<body>
+	<script>
+		//Заполнить массив нулями, кроме первого и последнего элементов, которые должны быть равны единице.
+		let a = Array(8).fill(0);
+		a.unshift(1);
+		a.push(1);
+		console.log(a);
+
+		
+ 		//Заполнить массив нулями и единицами, при этом данные значения чередуются, начиная с нуля
+  		let arr = [];
+
+  		for (let i = 0; i <= 10; i++) {
+    		if (i % 2) {
+      		arr.push(1);
+    		} else {
+      		arr.push(0)
+    		}
+  		}
+		console.log(arr);
+
+
+
+		//Создать массив, состоящий из троек подряд идущих одинаковых элементов.
+		let arr1 = [];
+  		for (let i = 0; i <= 12; i++) {
+    		if (i % 4) {
+      		arr1.push(3);
+    		} else {
+      		arr1.push(0)
+    		}
+  		}
+  		console.log(arr1);
+
+
+		//Найдите сумму чисел массива, которые стоят на четных местах
+		var arr5 = [1,4,21,1,5];
+ 
+ 		var sum = arr5.reduce((res, item, index) => {
+ 		if (index % 2 == 0) res += item;
+ 		return res;
+ 		}, 0);
+
+		console.log(sum);
+		
+
+		// Найти наиболее часто встречающийся элемент в массиве целых чисел
+		var arr8 = [3, 'a', 'a', 'a', 2, 3, 'a', 3, 'a', 2, 4, 9, 3];
+			var mf = 1;
+			var m = 0;
+			var item;
+			for (var i = 0; i < arr8.length; i++) {
+				for (var j = i; j < arr8.length; j++) {
+					if (arr8[i] == arr8[j])
+						m++;
+					if (mf < m) {
+						mf = m;
+						item = arr8[i];
+					}
+				}
+				m = 0;
+			}
+			console.log(item + " ( " + mf + " times ) ");
+ 
+
+
+			//Проверьте, является ли данный массив возрастающим или убывающим
+			var array = [1,2,3,7];
+			var isDescending = true;
+			var isAscending = true;
+			for (var i=0, l=array.length-1; i<l; i++){
+				console.log("loop iteration %s", i);
+				console.log("A: (%s > %s) = %s", array[i], array[i+1], (array[i] > array[i+1]));
+				console.log("B: isDescending: %s", isDescending);
+				console.log("are A and B both true? %s", (isDescending && (array[i] > array[i+1])));
+				console.log("");
+
+   				isDescending = isDescending && (array[i] > array[i+1]);
+   				isAscending = isAscending && (array[i] < array[i+1]);
+
+			}
+
+			if (isAscending)
+			{
+  			console.log('возрастающий');
+			}
+			else if (isDescending) 
+			{
+ 			 console.log('убывающий');
+			}
+			else
+			{
+  			console.log('Not Sorted');
+			}
+
+
+
+	
+    </script>
+	
+</body>
+</html>
+
+
+
+
+
+
